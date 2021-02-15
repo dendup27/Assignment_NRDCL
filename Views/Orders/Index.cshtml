@@ -1,0 +1,53 @@
+﻿@model IEnumerable<Assignment_NRDCL.Models.Order>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.CustomerCID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PriceAmount)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TansportAmount)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AdvanceBalance)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CustomerCID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PriceAmount)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TansportAmount)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AdvanceBalance)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.OrderID">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.OrderID">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.OrderID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
