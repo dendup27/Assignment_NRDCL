@@ -5,7 +5,7 @@ using Assignment_NRDCL.Repository;
 
 namespace Assignment_NRDCL.Controllers
 {
-    public class SitesController : Controller
+    public class SitesController : Controller    
     {
         private readonly IRepository<Site> siteRepository;
 

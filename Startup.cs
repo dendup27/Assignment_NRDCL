@@ -24,7 +24,7 @@ namespace Assignment_NRDCL
         {
             services.AddControllersWithViews();
             services.AddDbContext<NrdclDbContext>(options =>
-                options.UseSqlite(Configuration.GetConnectionString("MvcNrdclContext")));
+                options.UseNpgsql(Configuration.GetConnectionString("MvcNrdclContext")));
 
             //Repository Injection
             services.AddScoped(typeof(IRepository<Customer>), typeof(CustomerRepository));
